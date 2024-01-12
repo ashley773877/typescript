@@ -1,18 +1,16 @@
 class Vehicle {
-    status = "stopped";
+    status = "started" | "stopped" = "stopped";
   
-    constructor(make, model, wheels) {
-      this.make = make;
-      this.model = model;
-      this.wheels = wheels;
+    constructor(public make: string, public model: string, public wheels: number) {}
+   
+    start(): void {
+    this.status = "started";
     }
-    start() {
-      this.status = "started";
+
+    stop(): void {
+        this.status = "stopped";
     }
-    stop() {
-      this.status = "stopped";
-    }
-  }
+}
   
   class Car extends Vehicle {
     constructor(make, model) {
