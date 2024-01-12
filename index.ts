@@ -1,12 +1,12 @@
 class Vehicle {
     status: string = "stopped";
-    make!: string;
-    model!: string;
-    wheels!: number;
+    //make!: string;
+   // model!: string;
+   // wheels!: number;
   
     constructor(public make: string, public model: string, public wheels: number) {
         this.make = make;
-        this.model - model;
+        this.model = model;
         this.wheels = wheels;
     }
    
@@ -32,8 +32,8 @@ class Vehicle {
     }
   }
   
-  function printStatus(vehicle: vehicle): void {
-    if (vehicle.status === "started") {
+  function printStatus(Vehicle: Vehicle): void {
+    if (Vehicle.status === "started") {
       console.log("The vehicle is running.");
     } else {
       console.log("The vehicle is stopped.");
@@ -43,9 +43,9 @@ class Vehicle {
   const myHarley = new MotorCycle("Harley-Davidson", "Low Rider S");
   myHarley.start();
   printStatus(myHarley);
-  console.log(myHarley.make.toUppercase());
+  console.log(myHarley.make.toUpperCase());
   
   const myBuick = new Car("Buick", "Regal");
- // myBuick.wheels = myBuick.wheels - 1;
+  myBuick.wheels = myBuick.wheels - 1;
   console.log(myBuick.wheels);
   console.log(myBuick.model);
