@@ -1,7 +1,14 @@
 class Vehicle {
-    status = "started" | "stopped" = "stopped";
+    status: string = "stopped";
+    make!: string;
+    model!: string;
+    wheels!: number;
   
-    constructor(public make: string, public model: string, public wheels: number) {}
+    constructor(public make: string, public model: string, public wheels: number) {
+        this.make = make;
+        this.model - model;
+        this.wheels = wheels;
+    }
    
     start(): void {
     this.status = "started";
@@ -39,6 +46,6 @@ class Vehicle {
   console.log(myHarley.make.toUppercase());
   
   const myBuick = new Car("Buick", "Regal");
-  myBuick.wheels = myBuick.wheels - 1;
+ // myBuick.wheels = myBuick.wheels - 1;
   console.log(myBuick.wheels);
-  console.log(myBuick.mdl);
+  console.log(myBuick.model);
