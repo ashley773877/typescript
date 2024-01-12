@@ -13,14 +13,15 @@ class Vehicle {
 }
   
   class Car extends Vehicle {
-    constructor(make, model) {
-      super(make, model, "four");
+    constructor(make: string, model: string) {
+        super(make, model, 4);
     }
-  }
+}
+  
   
   class MotorCycle extends Vehicle {
-    constructor(make, model) {
-      super(make, model, 2);
+    constructor(make: string, model: string) {
+        super(make, model, 2);
     }
   }
   
