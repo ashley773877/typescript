@@ -31,6 +31,12 @@ class Vehicle {
         super(make, model, 2);
     }
   }
+  //part 3
+  class NCycle<T> extends Vehicle {
+    constructor(public make: T | T[], public model: T | T[], public wheels: number){
+        super("", "", wheels);
+    }
+  }
   
   function printStatus(Vehicle: Vehicle): void {
     if (Vehicle.status === "started") {
