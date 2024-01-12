@@ -25,8 +25,8 @@ class Vehicle {
     }
   }
   
-  function printStatus(vehicle) {
-    if (vehicle.status === "running") {
+  function printStatus(vehicle: vehicle): void {
+    if (vehicle.status === "started") {
       console.log("The vehicle is running.");
     } else {
       console.log("The vehicle is stopped.");
