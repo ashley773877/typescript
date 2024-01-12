@@ -33,12 +33,31 @@ class Vehicle {
   }
   //part 3
   class NCycle<T> extends Vehicle {
-    constructor(public make: T | T[], public model: T | T[], public wheels: number){
+    constructor(public make: T | T[], public model: T | T[], public wheels: number) {
         super("", "", wheels);
     }
-  }
-  
-  function printStatus(Vehicle: Vehicle): void {
+
+    print(parameter?: number): void {
+        if (!Array.isArray(this.make) && !Array.isArray(this.model)) {
+            console.log(`This is a ${this.make as string} ${this.model as string} NCycle.`);
+        } else if (Array.isArray(this.make) && Array.isArray(this.model) && parameter !== undefined &&
+            parameter >= 0 && parameter < this.make.length && parameter < this.model.length) {
+            console.log(`This NCycle has a ${this.make[parameter] as string} ${this.model[parameter] as string} at ${parameter}.`);
+        } else {
+            console.log("This NCycle was not created properly.");
+        }
+    }
+
+    printAll(): void {
+        if (Array.isArray(this.make) && Array.isArray(this.model)) {
+            for (let i = 0; i < Math.min(this.make.length, this.model.length); i++) {
+                console.log(`This NCycle has a ${this.make[i] as string} ${this.model[i] as string} at ${i}.`);
+            }
+        }
+    }
+}
+
+    function printStatus(Vehicle: Vehicle): void {
     if (Vehicle.status === "started") {
       console.log("The vehicle is running.");
     } else {
